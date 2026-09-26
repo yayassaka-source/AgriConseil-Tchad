@@ -3,31 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AgriConseil Tchad – Que faire face à un problème de culture ?</title>
+<title>AgriConseil Tchad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&family=Noto+Sans+Arabic:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#1e6b35;--green-d:#134a24;--gold:#c99a1c;--gold-l:#f3e2ad;--bg:#ffffff;--bg2:#f4f7f1;--ink:#17241b;--mute:#4d5d52;--line:#d9e2d6;
+:root{--green:#4caf50;--green-d:#3f8f44;--gold:#c99a1c;--gold-l:#f3e2ad;--bg:#ffffff;--bg2:#eef7ec;--ink:#1c2a1e;--mute:#597159;--line:#d3e8d3;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a13;--bg2:#16241a;--ink:#eef4ec;--mute:#a9b9ad;--line:#2a3d2f;--green:#4caf68;--gold-l:#3a3213}}
 :root[data-theme="dark"]{--bg:#0f1a13;--bg2:#16241a;--ink:#eef4ec;--mute:#a9b9ad;--line:#2a3d2f;--green:#4caf68;--gold-l:#3a3213}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *,*:before,*:after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+body[dir="rtl"]{font-family:"Noto Sans Arabic","Source Sans 3",system-ui,sans-serif}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+body[dir="rtl"] h1,body[dir="rtl"] h2,body[dir="rtl"] h3{font-family:"Noto Sans Arabic","Bricolage Grotesque",sans-serif}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--green-d);color:#fff;z-index:5}
-header .wrap{display:flex;align-items:center;gap:14px;padding-top:8px;padding-bottom:8px}
-header img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+header .wrap{display:flex;align-items:center;gap:14px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+header img{width:44px;height:44px;border-radius:50%;object-fit:cover}
 header b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
-header nav{margin-left:auto;display:flex;gap:18px;font-size:15px}
+header nav{margin-inline-start:auto;display:flex;align-items:center;gap:16px;font-size:15px}
 header nav a{text-decoration:none;opacity:.9}
 header nav a:hover{color:var(--gold-l)}
-@media(max-width:600px){header nav a:not(.tel){display:none}}
+.langs{display:flex;gap:4px;background:rgba(255,255,255,.12);border-radius:999px;padding:3px}
+.langs button{font:600 13px "Source Sans 3",sans-serif;border:0;background:transparent;color:#cfe4d2;padding:6px 10px;border-radius:999px;cursor:pointer;min-height:32px}
+.langs button[aria-pressed="true"]{background:#fff;color:var(--green-d)}
+#adminBtn{border:1.5px solid var(--gold-l);background:transparent;color:var(--gold-l);border-radius:999px;padding:6px 12px;font:600 13px "Source Sans 3",sans-serif;cursor:pointer}
+@media(max-width:640px){header nav a.navlink{display:none}}
 .hero{background:var(--green-d);color:#fff;padding:44px 0 56px;border-bottom:6px solid var(--gold)}
-.hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;max-width:15em}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:800;max-width:15em}
 .hero p.lead{max-width:36em;color:#d8e8da;margin:14px 0 28px}
 .tool{background:var(--bg);color:var(--ink);border-radius:14px;padding:22px;max-width:760px}
 .tool h2{font-size:20px;margin-bottom:12px}
@@ -36,9 +42,10 @@ header nav a:hover{color:var(--gold-l)}
 .chip{font:inherit;border:1.5px solid var(--green);background:transparent;color:var(--green);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:44px}
 .chip:hover{background:var(--bg2)}
 .chip[aria-pressed="true"]{background:var(--green);color:#fff}
-.result{border-left:5px solid var(--gold);background:var(--gold-l);padding:14px 16px;border-radius:0 10px 10px 0;margin-top:6px}
+.result{border-inline-start:5px solid var(--gold);background:var(--gold-l);padding:14px 16px;border-radius:0 10px 10px 0;margin-top:6px}
+body[dir="rtl"] .result{border-radius:10px 0 0 10px}
 .result h3{font-size:19px;margin-bottom:4px}
-.result ul{margin:8px 0 0;padding-left:20px}
+.result ul{margin:8px 0 0;padding-inline-start:20px}
 .result p{margin:4px 0}
 .warn{font-size:14px;color:var(--mute);margin-top:12px}
 section{padding:56px 0}
@@ -56,13 +63,24 @@ h2.t{font-size:clamp(26px,4vw,36px);margin-bottom:8px;color:var(--green)}
 .crop span{font-size:15px;color:var(--mute)}
 .mission{display:grid;gap:28px;grid-template-columns:1fr 1fr}
 @media(max-width:760px){.mission{grid-template-columns:1fr}}
-.mission ul{padding-left:20px;margin:0}
+.mission ul{padding-inline-start:20px;margin:0}
 .contact{background:var(--green-d);color:#fff}
 .contact h2{font-size:clamp(26px,4vw,36px);margin-bottom:16px}
 .contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
 .btn{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;background:var(--gold);color:#1b1b0f}
 .btn.o{background:transparent;color:#fff;border:2px solid #fff}
 footer{background:#0d331a;color:#b9cfbd;font-size:14px;padding:16px 0;text-align:center}
+.modal{position:fixed;inset:0;background:rgba(10,20,12,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:20}
+.modal[hidden]{display:none}
+.card{background:var(--bg);color:var(--ink);border-radius:14px;padding:24px;max-width:440px;width:100%;max-height:86vh;overflow:auto}
+.card h2{font-size:20px;margin-bottom:14px}
+.card label{display:block;font-size:14px;color:var(--mute);margin:12px 0 4px}
+.card input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg)}
+.card .actions{display:flex;gap:10px;margin-top:18px}
+.card button{font:inherit;cursor:pointer;border-radius:8px;padding:10px 16px;border:0}
+.save{background:var(--green);color:#fff}
+.cancel{background:var(--bg2);color:var(--ink);border:1px solid var(--line) !important}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -71,114 +89,250 @@ footer{background:#0d331a;color:#b9cfbd;font-size:14px;padding:16px 0;text-align
 <div class="wrap">
 <img src="data:image/jpeg;base64,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" alt="Logo AgriConseil Tchad">
 <b>AgriConseil Tchad</b>
-<nav><a href="#methode">Comment ça marche</a><a href="#mission">Mission</a><a class="tel" href="tel:+23566535709">66 53 57 09</a></nav>
+<nav>
+<a class="navlink" href="#methode" data-i18n="nav_method">Comment ça marche</a>
+<a class="navlink" href="#mission" data-i18n="nav_mission">Mission</a>
+<div class="langs" role="group" aria-label="Langue">
+<button data-lang="fr" aria-pressed="true">FR</button>
+<button data-lang="en" aria-pressed="false">EN</button>
+<button data-lang="ar" aria-pressed="false">AR</button>
+</div>
+<button id="adminBtn" hidden data-i18n="admin_btn">Panneau admin</button>
+</nav>
 </div>
 </header>
 
 <main>
 <div class="hero">
 <div class="wrap">
-<h1>Un problème dans votre champ ? Trouvez la piste et agissez vite.</h1>
-<p class="lead">Maladie, ravageur, jaunissement : choisissez votre culture, indiquez ce que vous voyez, et recevez des pistes de diagnostic et les premiers gestes à faire.</p>
-<div class="tool" id="diagnostic">
-<h2>Diagnostic rapide</h2>
-<small>1. Quelle culture ?</small>
+<h1 data-i18n="hero_h1">Un problème dans votre champ ? Trouvez la piste et agissez vite.</h1>
+<p class="lead" data-i18n="hero_lead">Maladie, ravageur, jaunissement : choisissez votre culture, indiquez ce que vous voyez, et recevez des pistes de diagnostic et les premiers gestes à faire.</p>
+<div class="tool">
+<h2 data-i18n="tool_title">Diagnostic rapide</h2>
+<small data-i18n="step1">1. Quelle culture ?</small>
 <div class="chips" id="cultures" role="group" aria-label="Culture"></div>
 <div id="symWrap" hidden>
-<small>2. Que voyez-vous ?</small>
+<small data-i18n="step2">2. Que voyez-vous ?</small>
 <div class="chips" id="symptoms" role="group" aria-label="Symptôme"></div>
 </div>
 <div id="out" aria-live="polite"></div>
-<p class="warn">Ce sont des pistes, pas un diagnostic certain. En cas de doute ou de forte attaque, montrez la plante à un conseiller agricole ou écrivez-nous.</p>
+<p class="warn" data-i18n="warn">Ce sont des pistes, pas un diagnostic certain. En cas de doute ou de forte attaque, montrez la plante à un conseiller agricole ou écrivez-nous.</p>
 </div>
 </div>
 </div>
 
 <section id="methode">
 <div class="wrap">
-<h2 class="t">Comment ça marche</h2>
-<p class="sub">Trois étapes, simples, adaptées au terrain.</p>
-<ol class="steps">
-<li><h3>Observez</h3><p>Regardez les feuilles, les tiges, les racines et le sol. Notez depuis quand le problème est apparu.</p></li>
-<li><h3>Identifiez</h3><p>Choisissez votre culture et le symptôme. Nous proposons les causes les plus probables.</p></li>
-<li><h3>Agissez</h3><p>Appliquez les gestes conseillés et contactez-nous pour un avis personnalisé.</p></li>
-</ol>
+<h2 class="t" data-i18n="methode_title">Comment ça marche</h2>
+<p class="sub" data-i18n="methode_sub">Trois étapes, simples, adaptées au terrain.</p>
+<ol class="steps" id="stepsList"></ol>
 </div>
 </section>
 
 <section class="alt">
 <div class="wrap">
-<h2 class="t">Cultures suivies</h2>
-<p class="sub">Les principales cultures du Tchad, avec leurs problèmes les plus fréquents.</p>
-<div class="crops">
-<div class="crop"><b>Maïs</b><span>Chenilles, carences</span></div>
-<div class="crop"><b>Coton</b><span>Pucerons, vers de capsules</span></div>
-<div class="crop"><b>Sorgho et mil</b><span>Striga</span></div>
-<div class="crop"><b>Arachide</b><span>Taches sur feuilles</span></div>
-<div class="crop"><b>Tomate</b><span>Flétrissement</span></div>
-</div>
+<h2 class="t" data-i18n="crops_title">Cultures suivies</h2>
+<p class="sub" data-i18n="crops_sub">Les principales cultures du Tchad, avec leurs problèmes les plus fréquents.</p>
+<div class="crops" id="cropsList"></div>
 </div>
 </section>
 
 <section id="mission">
 <div class="wrap mission">
 <div>
-<h2 class="t">Notre mission</h2>
-<p>Aider chaque agriculteur tchadien à savoir quoi faire face à une maladie, un ravageur ou un problème de culture, pour protéger et augmenter ses récoltes.</p>
-<p>AgriConseil Tchad propose des pistes de diagnostic, des actions concrètes et un conseil en ligne fluide, rapide et personnalisé, adapté au climat tropical.</p>
+<h2 class="t" data-i18n="mission_title">Notre mission</h2>
+<p data-i18n="mission_p1">Aider chaque agriculteur tchadien à savoir quoi faire face à une maladie, un ravageur ou un problème de culture, pour protéger et augmenter ses récoltes.</p>
+<p data-i18n="mission_p2">AgriConseil Tchad propose des pistes de diagnostic, des actions concrètes et un conseil en ligne fluide, rapide et personnalisé, adapté au climat tropical.</p>
 </div>
 <div>
-<h2 class="t">Nos engagements</h2>
-<ul>
-<li><b>Expertise :</b> des conseils fiables, expliqués simplement.</li>
-<li><b>Développement :</b> de meilleurs rendements et des revenus plus stables.</li>
-<li><b>Innovation :</b> des outils en ligne accessibles depuis un téléphone.</li>
-</ul>
+<h2 class="t" data-i18n="eng_title">Nos engagements</h2>
+<ul id="engList"></ul>
 </div>
 </div>
 </section>
 
 <section class="contact" id="contact">
 <div class="wrap">
-<h2>Parlez-nous de votre culture</h2>
-<p>Décrivez le problème et envoyez une photo de la plante si possible.</p>
+<h2 data-i18n="contact_title">Parlez-nous de votre culture</h2>
+<p data-i18n="contact_p">Décrivez le problème et envoyez une photo de la plante si possible.</p>
 <div class="row">
-<a class="btn" href="tel:+23566535709">Appeler le 66 53 57 09</a>
-<a class="btn o" href="https://wa.me/23566535709">Écrire sur WhatsApp</a>
-<a class="btn o" href="mailto:yayassak1@gmail.com">yayassak1@gmail.com</a>
+<a class="btn" id="phoneLink" href="tel:+23566535709" data-i18n="btn_call">Appeler le 66 53 57 09</a>
+<a class="btn o" id="waLink" href="https://wa.me/23566535709" data-i18n="btn_wa">Écrire sur WhatsApp</a>
+<a class="btn o" id="mailLink" href="mailto:yayassak1@gmail.com">yayassak1@gmail.com</a>
+<a class="btn o" id="fbLink" href="#" target="_blank" rel="noopener" hidden>Facebook</a>
+<a class="btn o" id="ttLink" href="#" target="_blank" rel="noopener" hidden>TikTok</a>
 </div>
-<p style="margin-top:18px">N'Djamena, Tchad</p>
+<p id="addrText" style="margin-top:18px">N'Djamena, Tchad</p>
 </div>
 </section>
 </main>
-<footer>© 2026 AgriConseil Tchad · Expertise · Développement · Innovation</footer>
+<footer data-i18n="footer">© 2026 AgriConseil Tchad · Expertise · Développement · Innovation</footer>
+
+<div class="modal" id="adminModal" hidden>
+<div class="card">
+<h2 data-i18n="admin_title">Panneau admin — Coordonnées</h2>
+<label data-i18n="lbl_phone">Téléphone (avec indicatif)</label>
+<input id="fPhone" placeholder="+235 66 53 57 09">
+<label data-i18n="lbl_mail">E-mail</label>
+<input id="fMail" placeholder="contact@exemple.com">
+<label data-i18n="lbl_addr">Adresse</label>
+<input id="fAddr" placeholder="N'Djamena, Tchad">
+<label data-i18n="lbl_fb">Lien Facebook</label>
+<input id="fFb" placeholder="https://facebook.com/agriconseiltchad">
+<label data-i18n="lbl_tt">Lien TikTok</label>
+<input id="fTt" placeholder="https://tiktok.com/@agriconseiltchad">
+<p class="note" data-i18n="admin_note">Ces informations sont visibles par tous les visiteurs du site et modifiables uniquement par les personnes ayant un accès Éditeur ou Propriétaire sur cet artefact (menu Partager de Claude).</p>
+<div class="actions">
+<button class="save" id="saveBtn" data-i18n="save">Enregistrer</button>
+<button class="cancel" id="cancelBtn" data-i18n="cancel">Annuler</button>
+</div>
+</div>
+</div>
 
 <script>
-var D={
-"Maïs":[
-{s:"Feuilles trouées, sciure dans le cornet",t:"Chenille légionnaire d'automne",a:["Inspectez le champ tôt, dès la levée","Retirez les chenilles à la main, le matin","Mettez un peu de sable fin ou de cendre dans le cornet","Si l'attaque est forte, demandez un produit adapté à un conseiller"]},
-{s:"Feuilles jaune pâle, plants chétifs",t:"Manque d'azote (sol pauvre)",a:["Apportez du compost ou du fumier bien décomposé","Apportez de l'engrais azoté en couverture, au bon stade","Alternez le maïs avec le niébé ou l'arachide"]}],
-"Coton":[
-{s:"Feuilles enroulées, miellat collant, fourmis",t:"Pucerons ou mouches blanches",a:["Observez le dessous des feuilles","Pulvérisez de l'extrait de neem sur les premiers foyers","Enlevez les mauvaises herbes autour du champ"]},
-{s:"Capsules ou fleurs trouées, chenilles",t:"Vers de la capsule",a:["Surveillez chaque semaine dès la floraison","Suivez le calendrier de traitement de votre encadrement cotonnier","Ramassez et détruisez les capsules attaquées"]}],
-"Sorgho / mil":[
-{s:"Plantes parasites à fleurs violettes, plants rabougris",t:"Striga",a:["Arrachez les striga avant qu'ils fassent des graines","Faites une rotation avec le niébé ou l'arachide","Apportez de la fumure organique"]}],
-"Arachide":[
-{s:"Taches brunes rondes sur les feuilles",t:"Cercosporiose",a:["Utilisez des semences saines","Faites une rotation des cultures","Éliminez les résidus après la récolte"]}],
-"Tomate":[
-{s:"Plant qui flétrit d'un coup, feuilles encore vertes",t:"Flétrissement bactérien",a:["Arrachez et éloignez les plants malades","Ne replantez pas de tomate au même endroit","Évitez l'eau stagnante et arrosez au pied"]}]
+var I18N={
+fr:{nav_method:"Comment ça marche",nav_mission:"Mission",admin_btn:"Panneau admin",
+hero_h1:"Un problème dans votre champ ? Trouvez la piste et agissez vite.",
+hero_lead:"Maladie, ravageur, jaunissement : choisissez votre culture, indiquez ce que vous voyez, et recevez des pistes de diagnostic et les premiers gestes à faire.",
+tool_title:"Diagnostic rapide",step1:"1. Quelle culture ?",step2:"2. Que voyez-vous ?",
+warn:"Ce sont des pistes, pas un diagnostic certain. En cas de doute ou de forte attaque, montrez la plante à un conseiller agricole ou écrivez-nous.",
+methode_title:"Comment ça marche",methode_sub:"Trois étapes, simples, adaptées au terrain.",
+steps:[["Observez","Regardez les feuilles, les tiges, les racines et le sol. Notez depuis quand le problème est apparu."],["Identifiez","Choisissez votre culture et le symptôme. Nous proposons les causes les plus probables."],["Agissez","Appliquez les gestes conseillés et contactez-nous pour un avis personnalisé."]],
+crops_title:"Cultures suivies",crops_sub:"Les principales cultures du Tchad, avec leurs problèmes les plus fréquents.",
+crop_notes:["Chenilles, carences","Pucerons, vers de capsules","Striga","Taches sur feuilles","Flétrissement"],
+mission_title:"Notre mission",mission_p1:"Aider chaque agriculteur tchadien à savoir quoi faire face à une maladie, un ravageur ou un problème de culture, pour protéger et augmenter ses récoltes.",
+mission_p2:"AgriConseil Tchad propose des pistes de diagnostic, des actions concrètes et un conseil en ligne fluide, rapide et personnalisé, adapté au climat tropical.",
+eng_title:"Nos engagements",
+eng:[["Expertise","des conseils fiables, expliqués simplement."],["Développement","de meilleurs rendements et des revenus plus stables."],["Innovation","des outils en ligne accessibles depuis un téléphone."]],
+contact_title:"Parlez-nous de votre culture",contact_p:"Décrivez le problème et envoyez une photo de la plante si possible.",
+btn_wa:"Écrire sur WhatsApp",footer:"© 2026 AgriConseil Tchad · Expertise · Développement · Innovation",
+admin_title:"Panneau admin — Coordonnées",lbl_phone:"Téléphone (avec indicatif)",lbl_mail:"E-mail",lbl_addr:"Adresse",lbl_fb:"Lien Facebook",lbl_tt:"Lien TikTok",
+admin_note:"Ces informations sont visibles par tous les visiteurs du site et modifiables uniquement par les personnes ayant un accès Éditeur ou Propriétaire sur cet artefact (menu Partager de Claude).",
+save:"Enregistrer",cancel:"Annuler",call:"Appeler le ",fb:"Facebook",tt:"TikTok"},
+en:{nav_method:"How it works",nav_mission:"Mission",admin_btn:"Admin panel",
+hero_h1:"A problem in your field? Find the likely cause and act fast.",
+hero_lead:"Disease, pest, yellowing leaves: pick your crop, say what you see, and get diagnostic leads plus the first actions to take.",
+tool_title:"Quick diagnosis",step1:"1. Which crop?",step2:"2. What do you see?",
+warn:"These are leads, not a certain diagnosis. If in doubt or the attack is severe, show the plant to an agricultural advisor or contact us.",
+methode_title:"How it works",methode_sub:"Three simple steps, adapted to the field.",
+steps:[["Observe","Look at the leaves, stems, roots and soil. Note how long the problem has been there."],["Identify","Pick your crop and the symptom. We suggest the most likely causes."],["Act","Apply the advised steps and contact us for personalised advice."]],
+crops_title:"Crops we cover",crops_sub:"The main crops grown in Chad, with their most common problems.",
+crop_notes:["Caterpillars, deficiencies","Aphids, bollworms","Striga","Leaf spots","Wilting"],
+mission_title:"Our mission",mission_p1:"Help every farmer in Chad know what to do when facing a disease, a pest or a crop problem, to protect and increase their harvest.",
+mission_p2:"AgriConseil Tchad offers diagnostic leads, concrete actions and fast, personalised online advice, adapted to the tropical climate.",
+eng_title:"Our commitments",
+eng:[["Expertise","reliable advice, explained simply."],["Development","better yields and steadier income."],["Innovation","online tools accessible from a phone."]],
+contact_title:"Tell us about your crop",contact_p:"Describe the problem and send a photo of the plant if possible.",
+btn_wa:"Message us on WhatsApp",footer:"© 2026 AgriConseil Tchad · Expertise · Development · Innovation",
+admin_title:"Admin panel — Contact details",lbl_phone:"Phone (with country code)",lbl_mail:"Email",lbl_addr:"Address",lbl_fb:"Facebook link",lbl_tt:"TikTok link",
+admin_note:"This information is visible to every visitor and can only be changed by people with Editor or Owner access to this artifact (Claude's Share menu).",
+save:"Save",cancel:"Cancel",call:"Call ",fb:"Facebook",tt:"TikTok"},
+ar:{nav_method:"كيف يعمل الموقع",nav_mission:"رسالتنا",admin_btn:"لوحة الإدارة",
+hero_h1:"مشكلة في حقلك؟ اعرف السبب المحتمل وتصرف بسرعة.",
+hero_lead:"مرض، آفة، اصفرار الأوراق: اختر محصولك، صف ما تراه، واحصل على احتمالات التشخيص وأولى الخطوات الواجب اتخاذها.",
+tool_title:"تشخيص سريع",step1:"١. ما هو المحصول؟",step2:"٢. ماذا تلاحظ؟",
+warn:"هذه احتمالات وليست تشخيصًا مؤكدًا. عند الشك أو إذا كانت الإصابة شديدة، اعرض النبتة على مرشد زراعي أو تواصل معنا.",
+methode_title:"كيف يعمل الموقع",methode_sub:"ثلاث خطوات بسيطة، تناسب الحقل.",
+steps:[["لاحظ","افحص الأوراق والسيقان والجذور والتربة. لاحظ منذ متى ظهرت المشكلة."],["حدد","اختر محصولك والعرض الذي تلاحظه. نقترح عليك الأسباب الأكثر احتمالاً."],["تصرف","طبّق الخطوات المنصوح بها وتواصل معنا للحصول على رأي مخصص."]],
+crops_title:"المحاصيل المتابَعة",crops_sub:"أهم المحاصيل الزراعية في تشاد ومشاكلها الأكثر شيوعًا.",
+crop_notes:["ديدان، نقص عناصر","مَنّ، ديدان اللوز","الهالوك (ستريغا)","بقع على الأوراق","ذبول"],
+mission_title:"رسالتنا",mission_p1:"مساعدة كل مزارع في تشاد على معرفة ما يجب فعله أمام مرض أو آفة أو مشكلة زراعية، لحماية محصوله وزيادته.",
+mission_p2:"يقدّم أگريكونسيل تشاد احتمالات تشخيص وخطوات عملية واستشارة سريعة وشخصية عبر الإنترنت، تناسب المناخ الاستوائي.",
+eng_title:"التزاماتنا",
+eng:[["الخبرة","نصائح موثوقة، مشروحة ببساطة."],["التنمية","إنتاجية أفضل ودخل أكثر استقرارًا."],["الابتكار","أدوات إلكترونية يسهل استخدامها من الهاتف."]],
+contact_title:"حدّثنا عن محصولك",contact_p:"صف المشكلة وأرسل صورة للنبتة إن أمكن.",
+btn_wa:"راسلنا عبر واتساب",footer:"© 2026 أگريكونسيل تشاد · الخبرة · التنمية · الابتكار",
+admin_title:"لوحة الإدارة — معلومات التواصل",lbl_phone:"الهاتف (مع رمز الدولة)",lbl_mail:"البريد الإلكتروني",lbl_addr:"العنوان",lbl_fb:"رابط فيسبوك",lbl_tt:"رابط تيك توك",
+admin_note:"هذه المعلومات ظاهرة لجميع الزوار، ولا يمكن تعديلها إلا من قبل الأشخاص الذين لديهم صلاحية محرر أو مالك على هذا الملف (من قائمة المشاركة في Claude).",
+save:"حفظ",cancel:"إلغاء",call:"اتصل بـ ",fb:"فيسبوك",tt:"تيك توك"}
 };
-var cu=document.getElementById("cultures"),sy=document.getElementById("symptoms"),sw=document.getElementById("symWrap"),out=document.getElementById("out");
+var CROPS_ID=["maize","cotton","sorghum","peanut","tomato"];
+var CROP_NAME={fr:["Maïs","Coton","Sorgho et mil","Arachide","Tomate"],en:["Maize","Cotton","Sorghum and millet","Groundnut","Tomato"],ar:["الذرة","القطن","الذرة الرفيعة والدخن","الفول السوداني","الطماطم"]};
+var D={
+fr:{maize:[{s:"Feuilles trouées, sciure dans le cornet",t:"Chenille légionnaire d'automne",a:["Inspectez le champ tôt, dès la levée","Retirez les chenilles à la main, le matin","Mettez un peu de sable fin ou de cendre dans le cornet","Si l'attaque est forte, demandez un produit adapté à un conseiller"]},{s:"Feuilles jaune pâle, plants chétifs",t:"Manque d'azote (sol pauvre)",a:["Apportez du compost ou du fumier bien décomposé","Apportez de l'engrais azoté en couverture, au bon stade","Alternez le maïs avec le niébé ou l'arachide"]}],
+cotton:[{s:"Feuilles enroulées, miellat collant, fourmis",t:"Pucerons ou mouches blanches",a:["Observez le dessous des feuilles","Pulvérisez de l'extrait de neem sur les premiers foyers","Enlevez les mauvaises herbes autour du champ"]},{s:"Capsules ou fleurs trouées, chenilles",t:"Vers de la capsule",a:["Surveillez chaque semaine dès la floraison","Suivez le calendrier de traitement de votre encadrement cotonnier","Ramassez et détruisez les capsules attaquées"]}],
+sorghum:[{s:"Plantes parasites à fleurs violettes, plants rabougris",t:"Striga",a:["Arrachez les striga avant qu'ils fassent des graines","Faites une rotation avec le niébé ou l'arachide","Apportez de la fumure organique"]}],
+peanut:[{s:"Taches brunes rondes sur les feuilles",t:"Cercosporiose",a:["Utilisez des semences saines","Faites une rotation des cultures","Éliminez les résidus après la récolte"]}],
+tomato:[{s:"Plant qui flétrit d'un coup, feuilles encore vertes",t:"Flétrissement bactérien",a:["Arrachez et éloignez les plants malades","Ne replantez pas de tomate au même endroit","Évitez l'eau stagnante et arrosez au pied"]}]},
+en:{maize:[{s:"Holes in leaves, sawdust-like frass in the whorl",t:"Fall armyworm",a:["Check the field early, right after emergence","Remove caterpillars by hand, in the morning","Put a little fine sand or ash in the whorl","If the attack is severe, ask an advisor for a suitable product"]},{s:"Pale yellow leaves, stunted plants",t:"Nitrogen deficiency (poor soil)",a:["Apply well-rotted compost or manure","Apply nitrogen fertiliser at the right stage","Rotate maize with cowpea or groundnut"]}],
+cotton:[{s:"Curled leaves, sticky honeydew, ants",t:"Aphids or whiteflies",a:["Check the underside of leaves","Spray neem extract on the first spots","Clear weeds around the field"]},{s:"Holes in bolls or flowers, caterpillars",t:"Bollworms",a:["Check weekly from flowering onward","Follow your cotton programme's spray calendar","Collect and destroy damaged bolls"]}],
+sorghum:[{s:"Purple-flowered parasitic plants, stunted crop",t:"Striga",a:["Pull out striga before it sets seed","Rotate with cowpea or groundnut","Apply organic manure"]}],
+peanut:[{s:"Round brown spots on leaves",t:"Leaf spot (cercospora)",a:["Use healthy seed","Rotate crops","Remove crop residues after harvest"]}],
+tomato:[{s:"Plant wilts suddenly, leaves still green",t:"Bacterial wilt",a:["Pull out and remove sick plants","Don't replant tomato in the same spot","Avoid standing water, water at the base"]}]},
+ar:{maize:[{s:"ثقوب في الأوراق، برادة داخل قمة النبتة",t:"دودة الحشد الخريفية",a:["افحص الحقل مبكرًا بعد الإنبات","انزع الديدان يدويًا في الصباح","ضع القليل من الرمل الناعم أو الرماد داخل القمة","عند اشتداد الإصابة، اطلب منتجًا مناسبًا من مرشد زراعي"]},{s:"أوراق صفراء باهتة، نبتات ضعيفة",t:"نقص النيتروجين (تربة فقيرة)",a:["أضف سمادًا عضويًا متحللًا جيدًا","أضف سمادًا نيتروجينيًا في المرحلة المناسبة","ناوب زراعة الذرة مع اللوبيا أو الفول السوداني"]}],
+cotton:[{s:"أوراق ملتفة، إفرازات لزجة، نمل",t:"مَنّ أو ذبابة بيضاء",a:["افحص الجهة السفلية للأوراق","رش مستخلص النيم على البؤر الأولى","أزل الأعشاب الضارة حول الحقل"]},{s:"ثقوب في اللوز أو الأزهار، ديدان",t:"ديدان اللوز",a:["راقب أسبوعيًا بدءًا من الإزهار","اتبع جدول المعالجة الخاص بإطار زراعة القطن","اجمع اللوز المصاب وأتلفه"]}],
+sorghum:[{s:"نباتات طفيلية أزهارها بنفسجية، نمو ضعيف",t:"الهالوك (ستريغا)",a:["انزع نبات الهالوك قبل تكوّن بذوره","ناوب الزراعة مع اللوبيا أو الفول السوداني","أضف سمادًا عضويًا"]}],
+peanut:[{s:"بقع بنية مستديرة على الأوراق",t:"تبقع الأوراق (سركوسبورا)",a:["استخدم بذورًا سليمة","ناوب المحاصيل","أزل بقايا المحصول بعد الحصاد"]}],
+tomato:[{s:"ذبول مفاجئ للنبتة مع بقاء الأوراق خضراء",t:"الذبول البكتيري",a:["انزع النباتات المصابة وأبعدها","لا تزرع الطماطم في نفس المكان مجددًا","تجنب ركود الماء واسقِ عند القاعدة"]}]}
+};
+var lang="fr",settings={phone:"+235 66 53 57 09",mail:"yayassak1@gmail.com",addr:"N'Djamena, Tchad",facebook:"",tiktok:""};
+
+function applyI18n(){
+var t=I18N[lang];
+document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(t[k]!==undefined && typeof t[k]==="string")el.textContent=t[k]});
+document.getElementById("phoneLink").textContent=t.call+settings.phone;
+document.getElementById("waLink").textContent=t.btn_wa;
+document.getElementById("stepsList").innerHTML=t.steps.map(function(s){return "<li><h3>"+s[0]+"</h3><p>"+s[1]+"</p></li>"}).join("");
+document.getElementById("engList").innerHTML=t.eng.map(function(e){return "<li><b>"+e[0]+" : </b>"+e[1]+"</li>"}).join("");
+document.getElementById("cropsList").innerHTML=CROPS_ID.map(function(id,i){return "<div class='crop'><b>"+CROP_NAME[lang][i]+"</b><span>"+t.crop_notes[i]+"</span></div>"}).join("");
+buildDiagnostic();
+}
+function setLang(l){lang=l;document.documentElement.lang=l;var rtl=(l==="ar");document.body.dir=rtl?"rtl":"ltr";
+document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-lang")===l))});
+applyI18n();}
+document.querySelectorAll(".langs button").forEach(function(b){b.onclick=function(){setLang(b.getAttribute("data-lang"))}});
+
 function pick(box,btn){[].forEach.call(box.children,function(b){b.setAttribute("aria-pressed","false")});btn.setAttribute("aria-pressed","true")}
-Object.keys(D).forEach(function(c){
-var b=document.createElement("button");b.className="chip";b.textContent=c;b.setAttribute("aria-pressed","false");
+function buildDiagnostic(){
+var cu=document.getElementById("cultures"),sy=document.getElementById("symptoms"),sw=document.getElementById("symWrap"),out=document.getElementById("out");
+cu.innerHTML="";sy.innerHTML="";out.innerHTML="";sw.hidden=true;
+CROPS_ID.forEach(function(id,i){
+var b=document.createElement("button");b.className="chip";b.textContent=CROP_NAME[lang][i];b.setAttribute("aria-pressed","false");
 b.onclick=function(){pick(cu,b);out.innerHTML="";sy.innerHTML="";sw.hidden=false;
-D[c].forEach(function(x){var y=document.createElement("button");y.className="chip";y.textContent=x.s;y.setAttribute("aria-pressed","false");
+D[lang][id].forEach(function(x){var y=document.createElement("button");y.className="chip";y.textContent=x.s;y.setAttribute("aria-pressed","false");
 y.onclick=function(){pick(sy,y);
-var h="<div class='result'><h3>Piste : "+x.t+"</h3><p>Gestes conseillés :</p><ul>";
-x.a.forEach(function(i){h+="<li>"+i+"</li>"});
+var h="<div class='result'><h3>"+x.t+"</h3><ul>";
+x.a.forEach(function(a){h+="<li>"+a+"</li>"});
 out.innerHTML=h+"</ul></div>"};sy.appendChild(y)})};
-cu.appendChild(b)});
+cu.appendChild(b)});}
+
+function applyContact(){
+document.getElementById("phoneLink").href="tel:"+settings.phone.replace(/[^0-9+]/g,"");
+document.getElementById("phoneLink").textContent=I18N[lang].call+settings.phone;
+document.getElementById("waLink").href="https://wa.me/"+settings.phone.replace(/[^0-9]/g,"");
+document.getElementById("mailLink").href="mailto:"+settings.mail;
+document.getElementById("mailLink").textContent=settings.mail;
+document.getElementById("addrText").textContent=settings.addr;
+var fb=document.getElementById("fbLink"),tt=document.getElementById("ttLink");
+fb.textContent=I18N[lang].fb;tt.textContent=I18N[lang].tt;
+if(settings.facebook){fb.href=settings.facebook;fb.hidden=false}else{fb.hidden=true}
+if(settings.tiktok){tt.href=settings.tiktok;tt.hidden=false}else{tt.hidden=true}
+}
+
+var dbRef=null;
+(async function(){
+var user=await claude.use("user");
+if(user){var can=false;try{can=await user.canEdit()}catch(e){}
+if(can){document.getElementById("adminBtn").hidden=false}}
+var db=await claude.use("db");
+if(db){dbRef=db.doc("site/contact");
+dbRef.onSnapshot(function(snap){var d=snap.data();if(d){settings.phone=d.phone||settings.phone;settings.mail=d.mail||settings.mail;settings.addr=d.addr||settings.addr;settings.facebook=d.facebook||"";settings.tiktok=d.tiktok||"";applyContact()}},function(){});}
+})();
+
+var modal=document.getElementById("adminModal");
+document.getElementById("adminBtn").onclick=function(){document.getElementById("fPhone").value=settings.phone;document.getElementById("fMail").value=settings.mail;document.getElementById("fAddr").value=settings.addr;document.getElementById("fFb").value=settings.facebook;document.getElementById("fTt").value=settings.tiktok;modal.hidden=false};
+document.getElementById("cancelBtn").onclick=function(){modal.hidden=true};
+document.getElementById("saveBtn").onclick=async function(){
+settings.phone=document.getElementById("fPhone").value.trim()||settings.phone;
+settings.mail=document.getElementById("fMail").value.trim()||settings.mail;
+settings.addr=document.getElementById("fAddr").value.trim()||settings.addr;
+settings.facebook=document.getElementById("fFb").value.trim();
+settings.tiktok=document.getElementById("fTt").value.trim();
+applyContact();modal.hidden=true;
+if(dbRef){try{await dbRef.set(settings)}catch(e){}}
+};
+
+applyI18n();applyContact();
 </script>
 </body>
 </html>
